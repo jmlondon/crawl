@@ -36,17 +36,17 @@ A data frame with the following columns
 
 \item{ParNames}{The names of the parameters specified by the arguments.}
 
-\item{fixPar}{The values specified by the \code{fixPar} argument for fixed values of the parameters. In model fitting, 
+\item{fixPar}{The values specified by the \code{fixPar} argument for fixed values of the parameters. In model fitting,
 these values will remain fixed and will not be estimated.}
 
 \item{thetaIndex}{This column provides the index of each element of the theta argument and to which parameter it corresponds.}
 
-\item{thetaStart}{If a value is given for the \code{theta} argument it will be placed in this column and its elements will 
+\item{thetaStart}{If a value is given for the \code{theta} argument it will be placed in this column and its elements will
 correspond to the \code{thetaIdx} column.}
 }
 \description{
-This function takes the model spesification arguments to the \code{\link{crwMLE}} function and displays a table
-with the parameter names in the order that \code{crwMLE} will use during model fitting. This is useful for specifying 
+This function takes the model spesification arguments to the \code{\link[=crwMLE]{crwMLE()}} function and displays a table
+with the parameter names in the order that \code{crwMLE} will use during model fitting. This is useful for specifying
 values for the \code{fixPar} or \code{theta} (starting values for free parameters) arguments.
 }
 \seealso{

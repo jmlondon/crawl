@@ -1,9 +1,3 @@
-########
-# Intention is for this to be overhauled with the tidyverse and piping
-# in mind.
-########
-
-
 #' Fit Continuous-Time Correlated Random Walk Models to Animal Telemetry Data
 #' 
 #' The function uses the Kalman filter to estimate movement paramters in a
@@ -17,48 +11,48 @@
 #' 
 #' A full model specification involves 4 components: a movement model, a
 #' stopping model, 2 location error models, and a drift indication. The
-#' movement model (\code{mov.model}) specifies how the movement parameters
+#' movement model (`mov.model`) specifies how the movement parameters
 #' should vary over time. This is a function of specified, time-indexed,
 #' covariates. The movement parameters (sigma for velocity variation and beta
 #' for velocity autocorrelation) are both modeled with a log link as par =
 #' exp(eta), where eta is the linear predictor based on the covariates. The
-#' \code{err.model} specification is a list of 2 such models, one for
+#' `err.model` specification is a list of 2 such models, one for
 #' \dQuote{longitude} and one for \dQuote{latitude} (in that order) location
 #' error. If only one location error model is given, it is used for both
-#' coordinates (parameter values as well). If \code{drift.model} is set to
-#' \code{TRUE}, then, 2 additional parameters are estimated for the drift
-#' process, a drift variance and a beta multiplier. If \code{polar.coord=TRUE}
+#' coordinates (parameter values as well). If `drift.model` is set to
+#' `TRUE`, then, 2 additional parameters are estimated for the drift
+#' process, a drift variance and a beta multiplier. If `polar.coord=TRUE`
 #' then the ad-hoc logitude correction factor described by Johnson et al.
 #' (2008) (Ecology 89:1208-1215) is used to adjust the variance scale for the
 #' longitude mdoel.
 #' 
-#' The \code{inital.state} is a list with the following elemets (with the exact
+#' The `inital.state` is a list with the following elemets (with the exact
 #' names):
 #' 
-#' \code{a} A vector with initial state values. It has 4 elemets (x location at time 1, x velocity at time 1, y location at time 1, 
+#' `a` A vector with initial state values. It has 4 elemets (x location at time 1, x velocity at time 1, y location at time 1, 
 #' y velocity at time 1) for
 #' non-drift models and 6 elemets for drift models (x location at time 1,
 #' x velocity at time 1, x drift velocity at time 1, etc...).
 #' 
-#' \code{theta} and \code{fixPar} are vectors with the appropriate number or
-#' parameters. \code{theta} contains only those paraemters which are to be
-#' estimated, while \code{fixPar} contains all parameter values with \code{NA}
+#' `theta` and `fixPar` are vectors with the appropriate number or
+#' parameters. `theta` contains only those paraemters which are to be
+#' estimated, while `fixPar` contains all parameter values with `NA`
 #' for parameters which are to be estimated.
 #' 
-#' The data set specified by \code{data} must contain a numeric or POSIXct column which is
+#' The data set specified by `data` must contain a numeric or POSIXct column which is
 #' used as the time index for analysis. The column name is specified by the
-#' \code{Time.name} argument. If a POSIXct column is used it is internally converted to a
+#' `Time.name` argument. If a POSIXct column is used it is internally converted to a
 #' numeric vector with units of hours. If your data are not compatible with these data structures, it is better
 #' to convert it yourself prior to analysis with crawl. Also, for stopping models, the
 #' stopping covariate must be between 0 and 1 inclusive, with 1 representing complete stop
 #' of the animal (no true movement, however, location error can still occur) and 0 
-#' represent unhindered movement. The coordinate location should have \code{NA} where no
+#' represent unhindered movement. The coordinate location should have `NA` where no
 #' location is recorded, but there is a change in the movment covariates.
 #' 
 #' The CTCRW models can be difficult to provide good initial values for
-#' optimization. If \code{initialSANN} is specified then simulated annealing is
+#' optimization. If `initialSANN` is specified then simulated annealing is
 #' used first to obtain starting values for the specified optimaization method.
-#' If simulated annealing is used first, then the returned \code{init} list of
+#' If simulated annealing is used first, then the returned `init` list of
 #' the crwFit object will be a list with the results of the simulated annealing
 #' optimization.
 #' 
@@ -69,25 +63,25 @@
 #' @param activity formula object giving the covariate for the activity (i.e., stopped or fully moving)
 #' portion of the model.
 #' @param drift logical indicating whether or not to include a random
-#' drift component. For most data this is usually not necessary. See \code{\link{northernFurSeal}} for an example
+#' drift component. For most data this is usually not necessary. See [northernFurSeal()] for an example
 #' using a drift model.
 #' @param data data.frame object containg telemetry and covariate data. A 
 #'   'SpatialPointsDataFrame' object from the package 'sp' or an 'sf' object
-#'   from the 'sf' package with a geometry column of type \code{sfc_POINT}.
+#'   from the 'sf' package with a geometry column of type `sfc_POINT`.
 #'   'spacetime' objects were previously accepted but no longer valid. 
 #'   Values for coords will be taken from 
 #'   the spatial data set and ignored in the arguments. Spatial data must have a
 #'   valid proj4string or epsg and must NOT be in longlat.
 #' @param coord A 2-vector of character values giving the names of the "X" and
-#' "Y" coordinates in \code{data}.
+#' "Y" coordinates in `data`.
 #' @param Time.name character indicating name of the location time column
 #' @param initial.state list object containg the inital state of the Kalman
 #' filter.
 #' @param theta starting values for parameter optimization.
 #' @param fixPar Values of parameters which are held fixed to the given value.
-#' @param method Optimization method that is passed to \code{\link{optim}}.
-#' @param control Control list which is passed to \code{\link{optim}}.
-#' @param constr Named list with elements \code{lower} and \code{upper} that
+#' @param method Optimization method that is passed to [optim()].
+#' @param control Control list which is passed to [optim()].
+#' @param constr Named list with elements `lower` and `upper` that
 #' are vectors the same length as theta giving the box constraints for the
 #' parameters
 #' @param prior A function returning the log-density function of the parameter
@@ -95,7 +89,7 @@
 #' fixed parameters should not be included.
 #' @param need.hess A logical value which decides whether or not to evaluate
 #' the Hessian for parameter standard errors
-#' @param initialSANN Control list for \code{\link{optim}} when simulated
+#' @param initialSANN Control list for [optim()] when simulated
 #' annealing is used for obtaining start values. See details
 #' @param attempts The number of times likelihood optimization will be
 #' attempted
@@ -118,7 +112,7 @@
 #' 
 #' \item{aic}{Model AIC value}
 #' 
-#' \item{initial.state}{Intial state provided to \code{crwMLE} for model
+#' \item{initial.state}{Intial state provided to `crwMLE` for model
 #' fitting}
 #' 
 #' \item{coord}{Coordinate names provided for fitting}
@@ -127,7 +121,7 @@
 #' 
 #' \item{convergence}{Indicator of convergence (0 = converged)}
 #' 
-#' \item{message}{Meesages given by \code{optim} during parameter optimization}
+#' \item{message}{Meesages given by `optim` during parameter optimization}
 #' 
 #' \item{activity}{Model provided for stopping variable}
 #' 

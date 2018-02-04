@@ -11,7 +11,7 @@ crwPredict(object.crwFit, predTime = NULL, return.type = "minimal", ...)
 crwPredict(object.crwFit, predTime = NULL, return.type = "minimal", ...)
 }
 \arguments{
-\item{object.crwFit}{A model object from \code{\link{crwMLE}}.}
+\item{object.crwFit}{A model object from \code{\link[=crwMLE]{crwMLE()}}.}
 
 \item{predTime}{vector of additional prediction times (numeric or POSIXct). Alternatively, a character vector specifying a time interval (see Details).}
 
@@ -21,7 +21,7 @@ crwPredict(object.crwFit, predTime = NULL, return.type = "minimal", ...)
 
 \item{flat}{logical. Should the result be returned as a flat data.frame.}
 
-\item{object.crwFit}{A model object from \code{\link{crwMLE}}.}
+\item{object.crwFit}{A model object from \code{\link[=crwMLE]{crwMLE()}}.}
 
 \item{predTime}{vector of desired prediction times (numeric or POSIXct). Alternatively, a character vector specifying a time interval (see Details).}
 
@@ -47,7 +47,7 @@ speed estimates, and the fit statistics and naive p-values.
 
 There are three possible return types specified with \code{return.type}:
 
-\item{minimal}{a data.frame with a minimal set of columns: 
+\item{minimal}{a data.frame with a minimal set of columns:
 \code{date_time,mu.x,mu.y,se.mu.x,se.mu.y}}
 
 \item{flat}{a data set is returned with the
@@ -83,8 +83,7 @@ detection.
 }
 \details{
 The requirements for \code{data} are the same as those for fitting the model
-in \code{\link{crwMLE}}.
-
+in \code{\link[=crwMLE]{crwMLE()}}.
 
 \itemize{
 \item("predTime"){
@@ -93,8 +92,7 @@ in \code{\link{crwMLE}}.
 }
 
 The requirements for \code{data} are the same as those for fitting the model
-in \code{\link{crwMLE}}.
-
+in \code{\link[=crwMLE]{crwMLE()}}.
 
 \itemize{
 \item("predTime"){

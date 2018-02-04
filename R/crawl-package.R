@@ -52,8 +52,8 @@ NULL
 #' 
 #' \describe{ \item{Time}{a numeric vector.}
 #' 
-#' \item{Argos_loc_class}{a factor with levels \code{0} \code{1}
-#' \code{2} \code{3} \code{A}.}
+#' \item{Argos_loc_class}{a factor with levels `0` `1`
+#' `2` `3` `A`.}
 #' 
 #' \item{latitude}{a numeric vector.}
 #' 
@@ -85,8 +85,8 @@ NULL
 #' 
 #' \item{DryTime}{a numeric vector.}
 #' 
-#' \item{Argos_loc_class}{a factor with levels \code{0} \code{1}
-#' \code{2} \code{3} \code{A} \code{B}}.}
+#' \item{Argos_loc_class}{a factor with levels `0` `1`
+#' `2` `3` `A` `B`}.}
 #' @author Devin S. Johnson
 #' @references Johnson, D., J. London, M. -A. Lea, and J. Durban (2008)
 #' Continuous-time random walk model for animal telemetry data. Ecology

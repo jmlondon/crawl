@@ -23,14 +23,14 @@
 #' one should use the importance sampling weights to calculate a weighted
 #' average (normalizing first, so the weights sum to 1).
 #' 
-#' @param object.sim A crwSimulator object from \code{\link{crwSimulator}}.
+#' @param object.sim A crwSimulator object from [crwSimulator()].
 #' @param fullPost logical. Draw parameter values as well to simulate full
 #' posterior
 #' @param df degrees of freedom for multivariate t distribution approximation
 #' to parameter posterior
 #' @param scale Extra scaling factor for t distribution approximation
 #' @param thetaSamp If multiple parameter samples are available in object.sim,
-#' setting \code{thetaSamp=n} will use the nth sample. Defaults to the last.
+#' setting `thetaSamp=n` will use the nth sample. Defaults to the last.
 #' @return
 #' 
 #' List with the following elements:
@@ -48,7 +48,7 @@
 #' 
 #' \item{log.isw}{non normalized log importance sampling weight}
 #' @author Devin S. Johnson
-#' @seealso See \code{demo(northernFurSealDemo)} for example.
+#' @seealso See `demo(northernFurSealDemo)` for example.
 #' @export
 
 `crwPostIS` <-

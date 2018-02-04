@@ -10,16 +10,16 @@ get_restricted_segments(xy, res_raster)
 get_restricted_segments(xy, res_raster)
 }
 \arguments{
-\item{xy}{A \code{SpatialPoints} object from the \code{sp} package or a 
+\item{xy}{A \code{SpatialPoints} object from the \code{sp} package or a
 2-column matrix of x and y locations}
 
-\item{res_raster}{A \code{raster} object from the raster package that indicates 
+\item{res_raster}{A \code{raster} object from the raster package that indicates
 restricted areas with a 1, else 0 for unrestricted areas.}
 
-\item{xy}{A \code{SpatialPoints} object from the \code{sp} package or a 
+\item{xy}{A \code{SpatialPoints} object from the \code{sp} package or a
 2-column matrix of x and y locations}
 
-\item{res_raster}{A \code{raster} object from the raster package that indicates 
+\item{res_raster}{A \code{raster} object from the raster package that indicates
 restricted areas with a 1, else 0 for unrestricted areas.}
 }
 \value{
@@ -32,15 +32,15 @@ that crosses a restricted area. The columns provide the start and end row indice
 the section occurs and the previous and post locations that are in unrestricted space.
 }
 \description{
-This function is used to identify sections of a path that pass through 
-restricted areas. the CTCRW model in crawl cannot actively steer paths away 
+This function is used to identify sections of a path that pass through
+restricted areas. the CTCRW model in crawl cannot actively steer paths away
 from restricted areas as it knows nothing of spatial information. So, this function
 will identify areas that for which the unrestrained path passes through these areas.
 If the path/points end within the restricted area, those records will be removed.
 The user can then use this information to adjust the path as desired.
 
-This function is used to identify sections of a path that pass through 
-restricted areas. the CTCRW model in crawl cannot actively steer paths away 
+This function is used to identify sections of a path that pass through
+restricted areas. the CTCRW model in crawl cannot actively steer paths away
 from restricted areas as it knows nothing of spatial information. So, this function
 will identify areas that for which the unrestrained path passes through these areas.
 If the path/points end within the restricted area, those records will be removed.

@@ -1,8 +1,8 @@
 #'Display the order of parameters along with fixed values and starting values
 #'
-#'This function takes the model spesification arguments to the \code{\link{crwMLE}} function and displays a table
-#'with the parameter names in the order that \code{crwMLE} will use during model fitting. This is useful for specifying 
-#'values for the \code{fixPar} or \code{theta} (starting values for free parameters) arguments. 
+#'This function takes the model spesification arguments to the [crwMLE()] function and displays a table
+#'with the parameter names in the order that `crwMLE` will use during model fitting. This is useful for specifying 
+#'values for the `fixPar` or `theta` (starting values for free parameters) arguments. 
 #'
 #'@param mov.model formula object specifying the time indexed covariates for
 #'movement parameters.
@@ -13,7 +13,7 @@
 #'@param drift logical indicating whether or not to include a random
 #'drift component.
 #'@param data data.frame object containg telemetry and covariate data. A
-#'\code{SpatialPointsDataFrame} object from the package 'sp' will also be accepted.
+#'`SpatialPointsDataFrame` object from the package 'sp' will also be accepted.
 #'@param Time.name character indicating name of the location time column
 #'@param theta starting values for parameter optimization.
 #'@param fixPar Values of parameters which are held fixed to the given value.
@@ -23,16 +23,16 @@
 #' 
 #'\item{ParNames}{The names of the parameters specified by the arguments.}
 #'
-#'\item{fixPar}{The values specified by the \code{fixPar} argument for fixed values of the parameters. In model fitting, 
+#'\item{fixPar}{The values specified by the `fixPar` argument for fixed values of the parameters. In model fitting, 
 #'these values will remain fixed and will not be estimated.}
 #'
 #'\item{thetaIndex}{This column provides the index of each element of the theta argument and to which parameter it corresponds.}
 #'
-#'\item{thetaStart}{If a value is given for the \code{theta} argument it will be placed in this column and its elements will 
-#'correspond to the \code{thetaIdx} column.}
+#'\item{thetaStart}{If a value is given for the `theta` argument it will be placed in this column and its elements will 
+#'correspond to the `thetaIdx` column.}
 #' 
 #'@author Devin S. Johnson
-#'@seealso \code{demo(northernFurSealDemo)} for example.
+#'@seealso `demo(northernFurSealDemo)` for example.
 #'  
 #'@export 
 

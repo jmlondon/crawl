@@ -17,7 +17,7 @@ AIC, delta AIC, and Akaike weights for all models listed as arguments.
 }
 \details{
 The function can either be executed with a series of 'crwFit' objects (see
-\code{\link{crwMLE}}) without the '.crwFit' suffix or the function can be
+\code{\link[=crwMLE]{crwMLE()}}) without the '.crwFit' suffix or the function can be
 called without any arguments and it will search out all 'crwFit' objects in
 the current workspace and produce the model selection table for all 'crwFit'
 objects in the workspace. Caution should be used when executing the function

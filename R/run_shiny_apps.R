@@ -1,4 +1,4 @@
-#' @title Start a shiny app to check data stored in a .csv file for model fitting with \code{crwMLE} function.
+#' @title Start a shiny app to check data stored in a .csv file for model fitting with `crwMLE` function.
 #' @description Users can start a beta version of Shiny app that allows for data checking and basic location projection.
 #' @export
 #' @importFrom shiny runApp

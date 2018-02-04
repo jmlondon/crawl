@@ -7,13 +7,13 @@
 #' predicted locations.
 #' 
 #' 
-#' @param object \code{crwPredict} object.
+#' @param object `crwPredict` object.
 #' @param plotType type of plot has to be one of the following: \dQuote{map} or
 #' \dQuote{ll} (default).
 #' @param ... Further arguments passed to plotting commands.
 #' @return A plot.
 #' @author Devin S. Johnson and Sebastian Luque
-#' @seealso See \code{demo(northernFurSealDemo)} for additional examples.
+#' @seealso See `demo(northernFurSealDemo)` for additional examples.
 #' @importFrom graphics lines plot
 #' @export
 "crwPredictPlot" <- function(object, plotType="ll",...)

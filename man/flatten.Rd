@@ -10,15 +10,15 @@ flatten(predObj)
 \item{predObj}{A crwPredict object}
 }
 \value{
-a \code{\link{data.frame}} version of a crwPredict list with columns
+a \code{\link[=data.frame]{data.frame()}} version of a crwPredict list with columns
 for the state standard errors
 }
 \description{
-\dQuote{Flattens} a list form \code{\link{crwPredict}} object into a flat
+\dQuote{Flattens} a list form \code{\link[=crwPredict]{crwPredict()}} object into a flat
 data.frame.
 }
 \seealso{
-\code{\link{northernFurSeal}} for use example
+\code{\link[=northernFurSeal]{northernFurSeal()}} for use example
 }
 \author{
 Devin S. Johnson

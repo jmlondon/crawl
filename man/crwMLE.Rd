@@ -28,14 +28,14 @@ indexed covariates for location error parameters.}
 portion of the model.}
 
 \item{drift}{logical indicating whether or not to include a random
-drift component. For most data this is usually not necessary. See \code{\link{northernFurSeal}} for an example
+drift component. For most data this is usually not necessary. See \code{\link[=northernFurSeal]{northernFurSeal()}} for an example
 using a drift model.}
 
-\item{data}{data.frame object containg telemetry and covariate data. A 
+\item{data}{data.frame object containg telemetry and covariate data. A
 'SpatialPointsDataFrame' object from the package 'sp' or an 'sf' object
 from the 'sf' package with a geometry column of type \code{sfc_POINT}.
-'spacetime' objects were previously accepted but no longer valid. 
-Values for coords will be taken from 
+'spacetime' objects were previously accepted but no longer valid.
+Values for coords will be taken from
 the spatial data set and ignored in the arguments. Spatial data must have a
 valid proj4string or epsg and must NOT be in longlat.}
 
@@ -51,22 +51,22 @@ filter.}
 
 \item{fixPar}{Values of parameters which are held fixed to the given value.}
 
-\item{method}{Optimization method that is passed to \code{\link{optim}}.}
+\item{method}{Optimization method that is passed to \code{\link[=optim]{optim()}}.}
 
-\item{control}{Control list which is passed to \code{\link{optim}}.}
+\item{control}{Control list which is passed to \code{\link[=optim]{optim()}}.}
 
 \item{constr}{Named list with elements \code{lower} and \code{upper} that
 are vectors the same length as theta giving the box constraints for the
 parameters}
 
 \item{prior}{A function returning the log-density function of the parameter
-prior distribution. THIS MUST BE A FUNCTION OF ONLY THE FREE PARAMETERS. Any 
+prior distribution. THIS MUST BE A FUNCTION OF ONLY THE FREE PARAMETERS. Any
 fixed parameters should not be included.}
 
 \item{need.hess}{A logical value which decides whether or not to evaluate
 the Hessian for parameter standard errors}
 
-\item{initialSANN}{Control list for \code{\link{optim}} when simulated
+\item{initialSANN}{Control list for \code{\link[=optim]{optim()}} when simulated
 annealing is used for obtaining start values. See details}
 
 \item{attempts}{The number of times likelihood optimization will be
@@ -82,14 +82,14 @@ indexed covariates for location error parameters.}
 portion of the model.}
 
 \item{drift}{logical indicating whether or not to include a random
-drift component. For most data this is usually not necessary. See \code{\link{northernFurSeal}} for an example
+drift component. For most data this is usually not necessary. See \code{\link[=northernFurSeal]{northernFurSeal()}} for an example
 using a drift model.}
 
-\item{data}{data.frame object containg telemetry and covariate data. A 
+\item{data}{data.frame object containg telemetry and covariate data. A
 'SpatialPointsDataFrame' object from the package 'sp' or an 'sf' object
 from the 'sf' package with a geometry column of type \code{sfc_POINT}.
-'spacetime' objects were previously accepted but no longer valid. 
-Values for coords will be taken from 
+'spacetime' objects were previously accepted but no longer valid.
+Values for coords will be taken from
 the spatial data set and ignored in the arguments. Spatial data must have a
 valid proj4string or epsg and must NOT be in longlat.}
 
@@ -105,22 +105,22 @@ filter.}
 
 \item{fixPar}{Values of parameters which are held fixed to the given value.}
 
-\item{method}{Optimization method that is passed to \code{\link{optim}}.}
+\item{method}{Optimization method that is passed to \code{\link[=optim]{optim()}}.}
 
-\item{control}{Control list which is passed to \code{\link{optim}}.}
+\item{control}{Control list which is passed to \code{\link[=optim]{optim()}}.}
 
 \item{constr}{Named list with elements \code{lower} and \code{upper} that
 are vectors the same length as theta giving the box constraints for the
 parameters}
 
 \item{prior}{A function returning the log-density function of the parameter
-prior distribution. THIS MUST BE A FUNCTION OF ONLY THE FREE PARAMETERS. Any 
+prior distribution. THIS MUST BE A FUNCTION OF ONLY THE FREE PARAMETERS. Any
 fixed parameters should not be included.}
 
 \item{need.hess}{A logical value which decides whether or not to evaluate
 the Hessian for parameter standard errors}
 
-\item{initialSANN}{Control list for \code{\link{optim}} when simulated
+\item{initialSANN}{Control list for \code{\link[=optim]{optim()}} when simulated
 annealing is used for obtaining start values. See details}
 
 \item{attempts}{The number of times likelihood optimization will be
@@ -293,7 +293,7 @@ longitude mdoel.
 The \code{inital.state} is a list with the following elemets (with the exact
 names):
 
-\code{a} A vector with initial state values. It has 4 elemets (x location at time 1, x velocity at time 1, y location at time 1, 
+\code{a} A vector with initial state values. It has 4 elemets (x location at time 1, x velocity at time 1, y location at time 1,
 y velocity at time 1) for
 non-drift models and 6 elemets for drift models (x location at time 1,
 x velocity at time 1, x drift velocity at time 1, etc...).
@@ -309,7 +309,7 @@ used as the time index for analysis. The column name is specified by the
 numeric vector with units of hours. If your data are not compatible with these data structures, it is better
 to convert it yourself prior to analysis with crawl. Also, for stopping models, the
 stopping covariate must be between 0 and 1 inclusive, with 1 representing complete stop
-of the animal (no true movement, however, location error can still occur) and 0 
+of the animal (no true movement, however, location error can still occur) and 0
 represent unhindered movement. The coordinate location should have \code{NA} where no
 location is recorded, but there is a change in the movment covariates.
 
@@ -340,7 +340,7 @@ longitude mdoel.
 The \code{inital.state} is a list with the following elemets (with the exact
 names):
 
-\code{a} A vector with initial state values. It has 4 elemets (x location at time 1, x velocity at time 1, y location at time 1, 
+\code{a} A vector with initial state values. It has 4 elemets (x location at time 1, x velocity at time 1, y location at time 1,
 y velocity at time 1) for
 non-drift models and 6 elemets for drift models (x location at time 1,
 x velocity at time 1, x drift velocity at time 1, etc...).
@@ -356,7 +356,7 @@ used as the time index for analysis. The column name is specified by the
 numeric vector with units of hours. If your data are not compatible with these data structures, it is better
 to convert it yourself prior to analysis with crawl. Also, for stopping models, the
 stopping covariate must be between 0 and 1 inclusive, with 1 representing complete stop
-of the animal (no true movement, however, location error can still occur) and 0 
+of the animal (no true movement, however, location error can still occur) and 0
 represent unhindered movement. The coordinate location should have \code{NA} where no
 location is recorded, but there is a change in the movment covariates.
 

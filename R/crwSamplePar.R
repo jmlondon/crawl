@@ -3,27 +3,27 @@
 #' 
 
 #' 
-#' The \code{crwSamplePar} function uses a fitted model object from
-#' \code{crwMLE} and a set of prediction times to construct a list from which
-#' \code{\link{crwPostIS}} will draw a sample from either the posterior
+#' The `crwSamplePar` function uses a fitted model object from
+#' `crwMLE` and a set of prediction times to construct a list from which
+#' [crwPostIS()] will draw a sample from either the posterior
 #' distribution of the state vectors conditional on fitted parameters or a full
 #' posterior draw from an importance sample of the parameters.
 #' 
 
 #' 
 #' The crwSamplePar function uses the information in a
-#' \code{\link{crwSimulator}} object to create a set of weights for importance
+#' [crwSimulator()] object to create a set of weights for importance
 #' sample-resampling of parameters in a full posterior sample of parameters and
-#' locations using \code{\link{crwPostIS}}. This function is usually called
-#' from \code{\link{crwPostIS}}. The average user should have no need to call
+#' locations using [crwPostIS()]. This function is usually called
+#' from [crwPostIS()]. The average user should have no need to call
 #' this function directly.
 #' 
-#' @param object.sim A simulation object from \code{\link{crwSimulator}}.
+#' @param object.sim A simulation object from [crwSimulator()].
 #' @param method Method for obtaining weights for movement parameter samples
 #' @param size Size of the parameter importance sample
 #' @param df Degrees of freedom for the t approximation to the parameter
 #' posterior
-#' @param grid.eps Grid size for \code{method="quadrature"}
+#' @param grid.eps Grid size for `method="quadrature"`
 #' @param crit Criterion for deciding "significance" of quadrature points
 #' (difference in log-likelihood)
 #' @param scale Scale multiplier for the covariance matrix of the t
@@ -86,7 +86,7 @@
 #' \item{thetaSampList}{A list containing a data frame of parameter vectors and
 #' their associated probabilities for a resample}
 #' @author Devin S. Johnson
-#' @seealso See \code{demo(northernFurSealDemo)} for example.
+#' @seealso See `demo(northernFurSealDemo)` for example.
 #' @export
 #' @import mvtnorm
 crwSamplePar <- function(object.sim, method="IS", size=1000, df=Inf, grid.eps=1, crit=2.5, scale=1, force.quad)

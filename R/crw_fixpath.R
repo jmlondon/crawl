@@ -10,12 +10,12 @@
 #' will identify areas that for which the unrestrained path passes through these areas.
 #' If the path/points end within the restricted area, those records will be removed.
 #' The user can then use this information to adjust the path as desired. 
-#' @param xy A \code{SpatialPoints} object from the \code{sp} package or a 
+#' @param xy A `SpatialPoints` object from the `sp` package or a 
 #' 2-column matrix of x and y locations
-#' @param res_raster A \code{raster} object from the raster package that indicates 
+#' @param res_raster A `raster` object from the raster package that indicates 
 #' restricted areas with a 1, else 0 for unrestricted areas.  
 #' @return A data.frame with each row associated with each section of the path
-#' that crosses a restricted area. The columns provide the start and end row indices of \code{xy} where
+#' that crosses a restricted area. The columns provide the start and end row indices of `xy` where
 #' the section occurs and the previous and post locations that are in unrestricted space.
 #' @author Josh M. London (josh.london@noaa.gov)
 #' @importFrom raster extract 
@@ -69,8 +69,8 @@ get_restricted_segments = function(xy, res_raster){
 #' @param xy Coordinate locations for the path. Can be one of the following classes: 
 #' (1) a two column matrix, 
 #' (2) 'SpatialPoints' or 'SpatialPointsDataFrame' object from the sp package,
-#' (3) 'crwPredict' object from the \code{crwPredict} function
-#' (4) 'crwIS' object from the \code{crwPostIS} function
+#' (3) 'crwPredict' object from the `crwPredict` function
+#' (4) 'crwIS' object from the `crwPostIS` function
 #' @param time A vector of times associated with xy locations
 #' @param res_raster An indicator raster object with cells = 1 if it is 'off-limits'
 #' and 0 elsewise.

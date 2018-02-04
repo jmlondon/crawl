@@ -25,19 +25,19 @@ crw_as_sf(crw_object, ftype, loctype, group)
 }
 \description{
 Provides reliable conversion of \code{"crwIS"} and \code{"crwPredict"} objects
-into simple features objects supported in the \code{"sf"} package. Both 
+into simple features objects supported in the \code{"sf"} package. Both
 \code{"sf"} objects with "POINT" geometry and \code{"sfc_LINESTRING"} objects
 are created. Coersion of \code{"crwPredict"} objects to \code{"sfc_LINESTRING"}
 has an option \code{"group"} argument when the \code{"crwPredict"} object
-includes predictions from multiple deployments. The grouping column will be 
+includes predictions from multiple deployments. The grouping column will be
 used and a tibble of multiple \code{"sf_LINESTRING"} objects will be returned
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{crwIS}: coerce crwIS object to sf (POINT or 
+\item \code{crwIS}: coerce crwIS object to sf (POINT or
 LINESTRING geometry)
 
-\item \code{crwPredict}: coerce crwPredict object to sf (POINT or 
+\item \code{crwPredict}: coerce crwPredict object to sf (POINT or
 LINESTRING geometry)
 }}
 

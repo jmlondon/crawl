@@ -1,14 +1,14 @@
 #' Coerce to sf/sfc object
 #' 
-#' Provides reliable conversion of \code{"crwIS"} and \code{"crwPredict"} objects
-#' into simple features objects supported in the \code{"sf"} package. Both 
-#' \code{"sf"} objects with "POINT" geometry and \code{"sfc_LINESTRING"} objects
-#' are created. Coersion of \code{"crwPredict"} objects to \code{"sfc_LINESTRING"}
-#' has an option \code{"group"} argument when the \code{"crwPredict"} object
+#' Provides reliable conversion of `"crwIS"` and `"crwPredict"` objects
+#' into simple features objects supported in the `"sf"` package. Both 
+#' `"sf"` objects with "POINT" geometry and `"sfc_LINESTRING"` objects
+#' are created. Coersion of `"crwPredict"` objects to `"sfc_LINESTRING"`
+#' has an option `"group"` argument when the `"crwPredict"` object
 #' includes predictions from multiple deployments. The grouping column will be 
-#' used and a tibble of multiple \code{"sf_LINESTRING"} objects will be returned
+#' used and a tibble of multiple `"sf_LINESTRING"` objects will be returned
 #' 
-#' @param crw_object an object of class \code{"crwIS"} or \code{"crwPredict"}
+#' @param crw_object an object of class `"crwIS"` or `"crwPredict"`
 #' @param ftype character of either "POINT" or "LINESTRING" specifying the feature type
 #' @param loctype character vector of location points to include ("p","o")
 #' @param group (optional) character specifying the column to group by for mulitple LINESTRING features

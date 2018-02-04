@@ -1,14 +1,14 @@
 #' 'Flattening' a list-form crwPredict object into a data.frame
 #' 
-#' \dQuote{Flattens} a list form \code{\link{crwPredict}} object into a flat
+#' \dQuote{Flattens} a list form [crwPredict()] object into a flat
 #' data.frame.
 #' 
 #' 
 #' @param predObj A crwPredict object
-#' @return a \code{\link{data.frame}} version of a crwPredict list with columns
+#' @return a [data.frame()] version of a crwPredict list with columns
 #' for the state standard errors
 #' @author Devin S. Johnson
-#' @seealso \code{\link{northernFurSeal}} for use example
+#' @seealso [northernFurSeal()] for use example
 #' @export
 "as.flat" <- function(predObj)
 {
@@ -31,15 +31,15 @@
 
 #' 'Flattening' a list-form crwPredict object into a data.frame
 #' 
-#' \dQuote{Flattens} a list form \code{\link{crwPredict}} object into a flat
+#' \dQuote{Flattens} a list form [crwPredict()] object into a flat
 #' data.frame.
 #' 
 #' 
 #' @param predObj A crwPredict object
-#' @return a \code{\link{data.frame}} version of a crwPredict list with columns
+#' @return a [data.frame()] version of a crwPredict list with columns
 #' for the state standard errors
 #' @author Devin S. Johnson
-#' @seealso \code{\link{northernFurSeal}} for use example
+#' @seealso [northernFurSeal()] for use example
 #' @export
 "flatten" <- function(predObj)
 {

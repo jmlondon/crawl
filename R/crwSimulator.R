@@ -2,9 +2,9 @@
 #' 
 
 #' 
-#' The \code{crwSimulator} function uses a fitted model object from
-#' \code{crwMLE} and a set of prediction times to construct a list from which
-#' \code{\link{crwPostIS}} will draw a sample from either the posterior
+#' The `crwSimulator` function uses a fitted model object from
+#' `crwMLE` and a set of prediction times to construct a list from which
+#' [crwPostIS()] will draw a sample from either the posterior
 #' distribution of the state vectors conditional on fitted parameters or a full
 #' posterior draw from an importance sample of the parameters.
 #' 
@@ -12,26 +12,26 @@
 #' 
 #' The crwSimulator function produces a list and preprocesses the necessary
 #' components for repeated track simulation from a fitted CTCRW model from
-#' \code{\link{crwMLE}}. The \code{method} argument can be one of \code{"IS"}
-#' or \code{"quadrature"}. If method="IS" is chosen standard importance
+#' [crwMLE()]. The `method` argument can be one of `"IS"`
+#' or `"quadrature"`. If method="IS" is chosen standard importance
 #' sampling will be used to calculate the appropriate weights via t proposal
 #' with df degrees of freedom.  If df=Inf (default) then a multivariate normal
 #' distribution is used to approximate the parameter posterior. If
-#' \code{method="quadrature"}, then a regular grid over the posterior is used
-#' to calculate the weights. The argument \code{grid.eps} controls the
+#' `method="quadrature"`, then a regular grid over the posterior is used
+#' to calculate the weights. The argument `grid.eps` controls the
 #' quadrature grid. The arguments are approximately the upper and lower limit
 #' in terms of standard deviations of the posterior.  The default is
-#' \code{grid.eps}, in units of 1sd. If \code{object.crwFit} was fitted with
-#' \code{crwArgoFilter}, then the returned list will also include \code{p.out},
+#' `grid.eps`, in units of 1sd. If `object.crwFit` was fitted with
+#' `crwArgoFilter`, then the returned list will also include `p.out`,
 #' which is the approximate probability that the observation is an outlier.
 #' 
-#' @param object.crwFit A model object from \code{\link{crwMLE}}.
+#' @param object.crwFit A model object from [crwMLE()].
 #' @param predTime vector of additional prediction times.
 #' @param method Method for obtaining weights for movement parameter samples
 #' @param parIS Size of the parameter importance sample
 #' @param df Degrees of freedom for the t approximation to the parameter
 #' posterior
-#' @param grid.eps Grid size for \code{method="quadrature"}
+#' @param grid.eps Grid size for `method="quadrature"`
 #' @param crit Criterion for deciding "significance" of quadrature points
 #' (difference in log-likelihood)
 #' @param scale Scale multiplier for the covariance matrix of the t
@@ -95,7 +95,7 @@
 #' \item{thetaSampList}{A list containing a data frame of parameter vectors and
 #' their associated probabilities for a resample}
 #' @author Devin S. Johnson
-#' @seealso See \code{demo(northernFurSealDemo)} for example.
+#' @seealso See `demo(northernFurSealDemo)` for example.
 #' @export
 crwSimulator = function(
   object.crwFit, 

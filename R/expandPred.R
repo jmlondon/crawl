@@ -13,7 +13,7 @@
 #' @param predTime prediction times to expand data
 #' @param time.col Logical value indicating whether to attach the new times to
 #' the expanded data
-#' @return data.frame expanded by \code{predTime}
+#' @return data.frame expanded by `predTime`
 #' @author Devin S. Johnson
 #' @examples
 #' 

@@ -53,7 +53,7 @@ this call}
 -2 * log-likelihood value for specified CTCRW model.
 }
 \description{
-This function is designed for primary use within the \code{\link{crwMLE}}
+This function is designed for primary use within the \code{\link[=crwMLE]{crwMLE()}}
 model fitting function. But, it can be accessed for advanced \code{R} and
 \code{crawl} users. Uses the state-space parameterization and Kalman filter
 method presented in Johnson et al. (2008).
@@ -67,7 +67,7 @@ Johnson, D., J. London, M. -A. Lea, and J. Durban. 2008.
 Continuous-time model for animal telemetry data. Ecology 89:1208-1215.
 }
 \seealso{
-\code{\link{crwMLE}}
+\code{\link[=crwMLE]{crwMLE()}}
 }
 \author{
 Devin S. Johnson

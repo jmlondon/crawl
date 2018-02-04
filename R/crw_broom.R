@@ -1,8 +1,8 @@
 #' @title tidy-like method for crwFit object
 #' 
-#' @description this function mimics the approach taken by \code{broom::tidy}
+#' @description this function mimics the approach taken by `broom::tidy`
 #' to present model output parameters in a tidy, data frame structure.
-#' @param fit \code{crwFit} object from \code{crawl::crwMLE}
+#' @param fit `crwFit` object from `crawl::crwMLE`
 #' @export
 #' 
 crw_broom <- function(fit) {

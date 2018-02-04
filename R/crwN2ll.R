@@ -1,18 +1,18 @@
 #' -2 * log-likelihood for CTCRW models
 #' 
-#' This function is designed for primary use within the \code{\link{crwMLE}}
-#' model fitting function. But, it can be accessed for advanced \code{R} and
-#' \code{crawl} users. Uses the state-space parameterization and Kalman filter
+#' This function is designed for primary use within the [crwMLE()]
+#' model fitting function. But, it can be accessed for advanced `R` and
+#' `crawl` users. Uses the state-space parameterization and Kalman filter
 #' method presented in Johnson et al. (2008).
 #' 
 
 #' 
 #' This function calls compiled C++ code which can be viewed in the
-#' \code{src} directory of the crawl source package.
+#' `src` directory of the crawl source package.
 #' 
 #' @param theta parameter values.
-#' @param fixPar values of parameters held fixed (contains \code{NA} for
-#' \code{theta} values).
+#' @param fixPar values of parameters held fixed (contains `NA` for
+#' `theta` values).
 #' @param y N by 2 matrix of coordinates with the longitude coordinate in the first column.
 #' @param noObs vector with 1 for unobserved locations, and 0 for observed locations.
 #' @param delta time difference to next location.
@@ -33,7 +33,7 @@
 #' @param constr Named list giving the parameter constraints
 #' @return -2 * log-likelihood value for specified CTCRW model.
 #' @author Devin S. Johnson
-#' @seealso \code{\link{crwMLE}}
+#' @seealso [crwMLE()]
 #' @references Johnson, D., J. London, M. -A. Lea, and J. Durban. 2008.
 #' Continuous-time model for animal telemetry data. Ecology 89:1208-1215.
 #' @export

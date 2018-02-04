@@ -12,7 +12,7 @@ crwSimulator(object.crwFit, predTime = NULL, method = "IS", parIS = 1000,
   df = Inf, grid.eps = 1, crit = 2.5, scale = 1, force.quad)
 }
 \arguments{
-\item{object.crwFit}{A model object from \code{\link{crwMLE}}.}
+\item{object.crwFit}{A model object from \code{\link[=crwMLE]{crwMLE()}}.}
 
 \item{predTime}{vector of additional prediction times.}
 
@@ -31,10 +31,10 @@ posterior}
 \item{scale}{Scale multiplier for the covariance matrix of the t
 approximation}
 
-\item{force.quad}{A logical indicating whether or not to force the execution 
+\item{force.quad}{A logical indicating whether or not to force the execution
 of the quadrature method for large parameter vectors.}
 
-\item{object.crwFit}{A model object from \code{\link{crwMLE}}.}
+\item{object.crwFit}{A model object from \code{\link[=crwMLE]{crwMLE()}}.}
 
 \item{predTime}{vector of additional prediction times.}
 
@@ -53,7 +53,7 @@ posterior}
 \item{scale}{Scale multiplier for the covariance matrix of the t
 approximation}
 
-\item{force.quad}{A logical indicating whether or not to force the execution 
+\item{force.quad}{A logical indicating whether or not to force the execution
 of the quadrature method for large parameter vectors.}
 }
 \value{
@@ -168,20 +168,20 @@ their associated probabilities for a resample}
 \description{
 The \code{crwSimulator} function uses a fitted model object from
 \code{crwMLE} and a set of prediction times to construct a list from which
-\code{\link{crwPostIS}} will draw a sample from either the posterior
+\code{\link[=crwPostIS]{crwPostIS()}} will draw a sample from either the posterior
 distribution of the state vectors conditional on fitted parameters or a full
 posterior draw from an importance sample of the parameters.
 
 The \code{crwSimulator} function uses a fitted model object from
 \code{crwMLE} and a set of prediction times to construct a list from which
-\code{\link{crwPostIS}} will draw a sample from either the posterior
+\code{\link[=crwPostIS]{crwPostIS()}} will draw a sample from either the posterior
 distribution of the state vectors conditional on fitted parameters or a full
 posterior draw from an importance sample of the parameters.
 }
 \details{
 The crwSimulator function produces a list and preprocesses the necessary
 components for repeated track simulation from a fitted CTCRW model from
-\code{\link{crwMLE}}. The \code{method} argument can be one of \code{"IS"}
+\code{\link[=crwMLE]{crwMLE()}}. The \code{method} argument can be one of \code{"IS"}
 or \code{"quadrature"}. If method="IS" is chosen standard importance
 sampling will be used to calculate the appropriate weights via t proposal
 with df degrees of freedom.  If df=Inf (default) then a multivariate normal
@@ -196,7 +196,7 @@ which is the approximate probability that the observation is an outlier.
 
 The crwSimulator function produces a list and preprocesses the necessary
 components for repeated track simulation from a fitted CTCRW model from
-\code{\link{crwMLE}}. The \code{method} argument can be one of \code{"IS"}
+\code{\link[=crwMLE]{crwMLE()}}. The \code{method} argument can be one of \code{"IS"}
 or \code{"quadrature"}. If method="IS" is chosen standard importance
 sampling will be used to calculate the appropriate weights via t proposal
 with df degrees of freedom.  If df=Inf (default) then a multivariate normal

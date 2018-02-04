@@ -4,7 +4,7 @@
 
 #' 
 #' Looks for columns in a data set that have a single unique non-missing value
-#' and fills in all \code{NA} with that value
+#' and fills in all `NA` with that value
 #' 
 #' 
 #' @param data data.frame

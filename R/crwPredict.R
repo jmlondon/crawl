@@ -3,20 +3,20 @@
 #' 
 
 #' 
-#' The \code{crwMEfilter} function uses a fitted model object from
-#' \code{crwMLE} to predict animal locations (with estimated uncertainty) at
-#' times in the original data set and supplimented by times in \code{predTime}.
-#' If \code{speedEst} is set to \code{TRUE}, then animal log-speed is also
+#' The `crwMEfilter` function uses a fitted model object from
+#' `crwMLE` to predict animal locations (with estimated uncertainty) at
+#' times in the original data set and supplimented by times in `predTime`.
+#' If `speedEst` is set to `TRUE`, then animal log-speed is also
 #' estimated. In addition, the measurement error shock detection filter of de
 #' Jong and Penzer (1998) is also calculated to provide a measure for outlier
 #' detection.
 #' 
 
 #' 
-#' The requirements for \code{data} are the same as those for fitting the model
-#' in \code{\link{crwMLE}}.
+#' The requirements for `data` are the same as those for fitting the model
+#' in [crwMLE()].
 #' 
-#' @param object.crwFit A model object from \code{\link{crwMLE}}.
+#' @param object.crwFit A model object from [crwMLE()].
 #' @param predTime vector of additional prediction times (numeric or POSIXct). Alternatively, a character vector specifying a time interval (see Details).
 #' @param flat logical. Should the result be returned as a flat data.frame.
 #' @param ... Additional arguments for testing new features
@@ -24,7 +24,7 @@
 #' @details 
 #' \itemize{
 #' \item("predTime"){
-#' \code{predTime} can be either passed as a separate vector of POSIXct or numeric values for additional prediction times beyond the observed times. If the original data were provided as a POSIXct type, then \code{crwPredict} can derive a sequence of regularly spaced prediction times from the original data. This is specified by providing a character string that corresponds to the \code{by} argument of the \code{seq.POSIXt} function (e.g. '1 hour', '30 mins'). \code{crwPredict} will round the first observed time up to the nearest unit (e.g. '1 hour' will round up to the nearest hour, '30 mins' will round up to the nearest minute) and start the sequence from there. The last observation time is truncated down to the nearest unit to specify the end time.
+#' `predTime` can be either passed as a separate vector of POSIXct or numeric values for additional prediction times beyond the observed times. If the original data were provided as a POSIXct type, then `crwPredict` can derive a sequence of regularly spaced prediction times from the original data. This is specified by providing a character string that corresponds to the `by` argument of the `seq.POSIXt` function (e.g. '1 hour', '30 mins'). `crwPredict` will round the first observed time up to the nearest unit (e.g. '1 hour' will round up to the nearest hour, '30 mins' will round up to the nearest minute) and start the sequence from there. The last observation time is truncated down to the nearest unit to specify the end time.
 #' }
 #' }
 #' 
@@ -32,18 +32,18 @@
 #' 
 #' List with the following elements:
 #' 
-#' \item{originalData}{A data.frame with is \code{data} merged with
-#' \code{predTime}.}
+#' \item{originalData}{A data.frame with is `data` merged with
+#' `predTime`.}
 #' 
 #' \item{alpha.hat}{Predicted state}
 #' 
-#' \item{Var.hat}{array where \code{Var.hat[,,i]} is the prediction
-#' covariance matrix for \code{alpha.hat[,i]}.}
+#' \item{Var.hat}{array where `Var.hat[,,i]` is the prediction
+#' covariance matrix for `alpha.hat[,i]`.}
 #' 
 #' \item{fit.test}{A data.frame of chi-square fit (df=2) statistics and naive
 #' (pointwise) p-values.}
 #' 
-#' If \code{flat} is set to \code{TRUE} then a data set is returned with the
+#' If `flat` is set to `TRUE` then a data set is returned with the
 #' columns of the original data plus the state estimates, standard errors (se),
 #' speed estimates, and the fit statistics and naive p-values.
 #' 

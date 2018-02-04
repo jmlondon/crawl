@@ -9,7 +9,7 @@ crwSamplePar(object.sim, method = "IS", size = 1000, df = Inf,
   grid.eps = 1, crit = 2.5, scale = 1, force.quad)
 }
 \arguments{
-\item{object.sim}{A simulation object from \code{\link{crwSimulator}}.}
+\item{object.sim}{A simulation object from \code{\link[=crwSimulator]{crwSimulator()}}.}
 
 \item{method}{Method for obtaining weights for movement parameter samples}
 
@@ -26,7 +26,7 @@ posterior}
 \item{scale}{Scale multiplier for the covariance matrix of the t
 approximation}
 
-\item{force.quad}{A logical indicating whether or not to force the execution 
+\item{force.quad}{A logical indicating whether or not to force the execution
 of the quadrature method for large parameter vectors.}
 }
 \value{
@@ -87,16 +87,16 @@ their associated probabilities for a resample}
 \description{
 The \code{crwSamplePar} function uses a fitted model object from
 \code{crwMLE} and a set of prediction times to construct a list from which
-\code{\link{crwPostIS}} will draw a sample from either the posterior
+\code{\link[=crwPostIS]{crwPostIS()}} will draw a sample from either the posterior
 distribution of the state vectors conditional on fitted parameters or a full
 posterior draw from an importance sample of the parameters.
 }
 \details{
 The crwSamplePar function uses the information in a
-\code{\link{crwSimulator}} object to create a set of weights for importance
+\code{\link[=crwSimulator]{crwSimulator()}} object to create a set of weights for importance
 sample-resampling of parameters in a full posterior sample of parameters and
-locations using \code{\link{crwPostIS}}. This function is usually called
-from \code{\link{crwPostIS}}. The average user should have no need to call
+locations using \code{\link[=crwPostIS]{crwPostIS()}}. This function is usually called
+from \code{\link[=crwPostIS]{crwPostIS()}}. The average user should have no need to call
 this function directly.
 }
 \seealso{

@@ -10,8 +10,8 @@ fix_path(xy, time, res_raster, trans)
 fix_path(xy, time, res_raster, trans)
 }
 \arguments{
-\item{xy}{Coordinate locations for the path. Can be one of the following classes: 
-(1) a two column matrix, 
+\item{xy}{Coordinate locations for the path. Can be one of the following classes:
+(1) a two column matrix,
 (2) 'SpatialPoints' or 'SpatialPointsDataFrame' object from the sp package,
 (3) 'crwPredict' object from the \code{crwPredict} function
 (4) 'crwIS' object from the \code{crwPostIS} function}
@@ -23,8 +23,8 @@ and 0 elsewise.}
 
 \item{trans}{A transition matrix object from the gdistance package.}
 
-\item{xy}{Coordinate locations for the path. Can be one of the following classes: 
-(1) a two column matrix, 
+\item{xy}{Coordinate locations for the path. Can be one of the following classes:
+(1) a two column matrix,
 (2) 'SpatialPoints' or 'SpatialPointsDataFrame' object from the sp package,
 (3) 'crwPredict' object from the \code{crwPredict} function
 (4) 'crwIS' object from the \code{crwPostIS} function}

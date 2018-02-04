@@ -12,7 +12,7 @@ crwPostIS(object.sim, fullPost = TRUE, df = Inf, scale = 1,
   thetaSamp = NULL)
 }
 \arguments{
-\item{object.sim}{A crwSimulator object from \code{\link{crwSimulator}}.}
+\item{object.sim}{A crwSimulator object from \code{\link[=crwSimulator]{crwSimulator()}}.}
 
 \item{fullPost}{logical. Draw parameter values as well to simulate full
 posterior}
@@ -25,7 +25,7 @@ to parameter posterior}
 \item{thetaSamp}{If multiple parameter samples are available in object.sim,
 setting \code{thetaSamp=n} will use the nth sample. Defaults to the last.}
 
-\item{object.sim}{A crwSimulator object from \code{\link{crwSimulator}}.}
+\item{object.sim}{A crwSimulator object from \code{\link[=crwSimulator]{crwSimulator()}}.}
 
 \item{fullPost}{logical. Draw parameter values as well to simulate full
 posterior}

@@ -10,7 +10,7 @@ intToPOSIX(timeVector, tz = "GMT")
 \item{timeVector}{A vector of integers produced by as.numeric applied to a
 PSIXct vector}
 
-\item{tz}{Time zone of the vector (see \code{\link{as.POSIXct}}).}
+\item{tz}{Time zone of the vector (see \code{\link[=as.POSIXct]{as.POSIXct()}}).}
 }
 \value{
 POSIXct vector

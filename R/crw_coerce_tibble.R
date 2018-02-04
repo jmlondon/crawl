@@ -1,7 +1,7 @@
 #' Coerce crawl objects (crwIS and crwPredict) to tibbles
 #'
 #' @author Josh M. London
-#' @param crw_object an object of class \code{"crwIS"} or \code{"crwPredict"},
+#' @param crw_object an object of class `"crwIS"` or `"crwPredict"`,
 #' @export
 
 crw_as_tibble <- function(crw_object) {
