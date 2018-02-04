@@ -4,7 +4,8 @@
 #' to present model output parameters in a tidy, data frame structure.
 #' @param fit \code{crwFit} object from \code{crawl::crwMLE}
 #' @export
-tidy_crwFit <- function(fit) {
+#' 
+crw_broom <- function(fit) {
   terms <- data.frame(term = fit$nms)
   out <- as.data.frame(round(cbind(
     fit$par, fit$se, fit$ci[, 1], fit$ci[, 2]), 3)
@@ -32,4 +33,8 @@ tidy_crwFit <- function(fit) {
                  conf.high = NA
                ))
   out
+}
+
+tidy_crwFit <- function(fit) {
+  crw_broom(fit)
 }
